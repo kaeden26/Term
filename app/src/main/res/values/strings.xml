@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Term1</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="unknown">Failed to locate.</string>
+    <string name="desc">Current Location -</string>
+</resources>
