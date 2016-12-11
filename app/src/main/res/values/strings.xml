@@ -4,4 +4,10 @@
     <string name="latitude">Latitude</string>
     <string name="unknown">Failed to locate.</string>
     <string name="desc">Current Location -</string>
+    <string name="task_default">Type contents here</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="menu_add">Add New Task</string>
+    <string name="menu_remove">Remove Task</string>
+    <string name="contextmenu_header">Context Menu</string>
+    <string name="noitem_message">To add new task, press menu button and select Add New Task</string>
 </resources>
