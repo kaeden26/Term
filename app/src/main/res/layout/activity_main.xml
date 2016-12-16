@@ -23,17 +23,17 @@
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Todo"
         android:layout_toLeftOf="@+id/Statistics"
         android:layout_toStartOf="@+id/Statistics"
         android:layout_marginTop="59dp"
-        android:id="@+id/latitude" />
+        android:id="@+id/latitude"
+        android:text="latitude" />
 
     <TextView
-        android:text="TextView"
+        android:text="longitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/latitude"

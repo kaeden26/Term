@@ -53,10 +53,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-      // final LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
-/*
-        btnShowLocation .setOnClickListener(new View.OnClickListener() {
+
+
+        Map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Map.class);
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("longitude", longitude);
                 startActivity(intent);
             }
-        });*/
+        });
         Todo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
@@ -72,44 +72,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Map.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this, Map.class);
-                intent.putExtra("latitude", latitude);
-                intent.putExtra("longitude", longitude);
-                startActivity(intent);
-            }
-        });
+
 
 
     }
-
-/*
-   */
-/* private void updateLocation(Location location) {
-        TextView tvDescription = (TextView) findViewById(R.id.desc);
-        TextView tvLongitude = (TextView) findViewById(R.id.longitude);
-        TextView tvLatitude = (TextView) findViewById(R.id.latitude);
-
-        if (location != null) {
-            double longitude = location.getLongitude();
-            double latitude = location.getLatitude();
-
-            tvDescription.setText(R.string.desc);
-            tvLongitude.setText(
-                    getString(R.string.longitude) + " " + longitude);
-            tvLatitude.setText(
-                    getString(R.string.latitude) + " " + latitude);
-        } else {
-            tvDescription.setText(R.string.unknown);
-            tvLongitude.setText(" ");
-            tvLatitude.setText(" ");
-
-        }*//*
-
-    }
-*/
 
 }
 

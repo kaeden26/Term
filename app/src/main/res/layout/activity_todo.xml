@@ -9,6 +9,13 @@
         android:layout_gravity="center"
         android:text="@string/noitem_message"
         android:visibility="visible"/>
+
+    <Button
+        android:text="Button"
+        android:layout_width="match_parent"
+        android:layout_height="142dp"
+        android:id="@+id/save" />
+
     <EditText
         android:id="@+id/TaskEditText"
         android:layout_width="fill_parent"

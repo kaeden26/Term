@@ -1,6 +1,7 @@
 package com.example.hyub.term1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.KeyEvent;
@@ -9,7 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnKeyListener;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -28,8 +29,9 @@ public class Todo extends Activity{
     private TextView TaskTextView = null;
     private EditText TaskEditText = null;
     private ListView TaskListView = null;
-    ArrayList<String> arrTaskItems = null;
-    ArrayAdapter<String> arrayAdapter = null;
+    ArrayList<NoteItem> arrTaskItems = null;
+    NoteItemAdapter arrayAdapter = null;
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -38,20 +40,22 @@ public class Todo extends Activity{
         TaskTextView = (TextView)findViewById(R.id.NoItemText);
         TaskEditText = (EditText)findViewById(R.id.TaskEditText);
         TaskListView = (ListView)findViewById(R.id.TaskListView);
-        arrTaskItems = new ArrayList<String>();
-        arrayAdapter = new ArrayAdapter<String>(this, R.layout.activity_todo, arrTaskItems);
+        arrTaskItems = new ArrayList<NoteItem>();
+        arrayAdapter = new NoteItemAdapter(this, R.layout.activity_todo, arrTaskItems);
 
         TaskListView.setAdapter(arrayAdapter);
         registerForContextMenu(TaskListView);
 
         TaskEditText.setOnKeyListener(new OnKeyListener(){
-            public boolean
-            onKey(View v, int code, KeyEvent event){
+            public boolean onKey(View v, int code, KeyEvent event){
                 if(event.getAction() == KeyEvent.ACTION_DOWN){
                     if ((code == KeyEvent.KEYCODE_DPAD_CENTER)||
                             (code == KeyEvent.KEYCODE_ENTER)){
                         if(TaskEditText.getText().length() > 0){
-                            arrTaskItems.add(0,TaskEditText.getText().toString());
+                            NoteItem item;
+
+                            item = new NoteItem(TaskEditText.getText().toString());
+                            arrTaskItems.add(0,item);
                             arrayAdapter.notifyDataSetChanged();
                             TaskEditText.setText("");
                             cancelInput();
@@ -59,7 +63,18 @@ public class Todo extends Activity{
                         }
                     }
                 }
-                return true;
+                return false;
+            }
+
+        });
+
+        Button save = (Button) findViewById(R.id.save);
+        save.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent =  getIntent();
+                double latitude = intent.getExtras().getDouble("latitude");
+                double longitude = intent.getExtras().getDouble("longitude");
+
             }
 
         });
@@ -174,4 +189,6 @@ public class Todo extends Activity{
             TaskListView.setVisibility(View.GONE);
         }
     }
+
+
 }

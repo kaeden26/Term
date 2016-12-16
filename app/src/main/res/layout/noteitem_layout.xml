@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/color_background">
+    <TextView
+        android:id="@+id/NoteRowContent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="10dp"
+        android:text="Content"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textColor="@color/color_text"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/NoteRowDate"
+        />
+    <TextView
+        android:id="@+id/NoteRowDate"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"/>
+</RelativeLayout> 
