@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Intro">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,11 +18,13 @@
         </activity>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCBML5OUDdxfvDxzKVofCRBMYeZih_l7CM" />
+            android:value="AIzaSyA0GDh2AYSnKBVvu84cJBbp3aRWl6pio1k" />
 
 
         <activity android:name=".Todo"/>
         <activity android:name=".Map" />
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".Memo"/>
 
     </application>
     <uses-permission android:name="com.example.hyub.term1.locationapi.maps.permission.MAPS_RECEIVE" />

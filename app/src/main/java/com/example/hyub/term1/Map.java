@@ -30,8 +30,7 @@ public class Map extends FragmentActivity implements OnMapReadyCallback{
         latitude = intent.getExtras().getDouble("latitude");
         longitude = intent.getExtras().getDouble("longitude");
 
-        MapFragment mapFragment = (MapFragment) getFragmentManager()
-                .findFragmentById(R.id.map);
+        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
 
@@ -39,11 +38,9 @@ public class Map extends FragmentActivity implements OnMapReadyCallback{
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(
-                new LatLng(latitude, longitude)   // 위도, 경도
-        ));
 
-        CameraUpdate zoom = CameraUpdateFactory.zoomTo(15);
+
+        CameraUpdate zoom = CameraUpdateFactory.zoomTo(13);
         googleMap.animateCamera(zoom);
 
         MarkerOptions marker = new MarkerOptions();

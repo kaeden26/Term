@@ -12,7 +12,6 @@
         android:text="Content"
         android:singleLine="true"
         android:ellipsize="end"
-        android:textColor="@color/color_text"
         android:layout_alignParentLeft="true"
         android:layout_toLeftOf="@+id/NoteRowDate"
         />
